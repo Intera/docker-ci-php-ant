@@ -1,4 +1,4 @@
-FROM intera/docker-ci-php
+FROM intera/docker-ci-php:5.6-ubuntu
 
 RUN apt-get update \
 	&& apt-get dist-upgrade -y \

@@ -8,7 +8,8 @@ RUN apt-get install -y \
 	    curl \
 	    default-jdk \
 	    ant \
-	    mysql-client
+	    mysql-client \
+	    pdftk-java
 
 RUN apt-get install -y ruby clang gcc make ruby-dev libffi-dev
 

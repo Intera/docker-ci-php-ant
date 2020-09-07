@@ -8,10 +8,14 @@ RUN apt-get install -y \
 	    curl \
 	    default-jdk \
 	    ant \
-	    ruby-compass \
 	    mysql-client
 
-RUN apt-get --purge -y autoremove \
+RUN apt-get install -y ruby clang gcc make ruby-dev libffi-dev
+
+RUN gem install compass --no-document
+
+RUN apt-get -y purge clang gcc make ruby-dev libffi-dev \
+    && apt-get --purge -y autoremove \
 	&& apt-get autoclean \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*

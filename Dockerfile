@@ -20,6 +20,11 @@ RUN gem install compass --no-document
 RUN apt-get install -y --no-install-recommends \
 		php8.1-igbinary
 
+# install imagick via PECL
+RUN apt-get update && apt-get install -y libmagickwand-dev \
+    && pecl install imagick \
+    && docker-php-ext-enable imagick
+
 RUN apt-get -y purge clang gcc make ruby-dev libffi-dev \
     && apt-get --purge -y autoremove \
 	&& apt-get autoclean \

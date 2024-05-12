@@ -9,8 +9,7 @@ RUN apt-get install -y \
 	    default-jdk \
 	    ant \
 	    mysql-client \
-	    pdftk-java \
-        php-imagick
+	    pdftk-java
 
 RUN apt-get install -y ruby clang gcc make ruby-dev libffi-dev
 
